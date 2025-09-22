@@ -41,7 +41,6 @@ pwn.college{UXIk7d2JnwElTFSN4Chd9GjTANC.QX1QTN0wSMwEzNzEzW}
 Absolute paths start with / and specify the exact location of a file in the filesystem. We can run /challenge/run from any directory.
 
 ```bash
-Copy code
 hacker@paths~program-and-absolute-paths:~$ /challenge/run
 Correct!!!
 /challenge/run is an absolute path! Here is your flag:
@@ -54,7 +53,6 @@ pwn.college{A7-WmhT03MDybBQUn243Mb5ZMds.QX2QTN0wSMwEzNzEzW}
 Some programs require you to be in a specific directory to run them correctly. Here, /challenge/run must be executed from /usr/include.
 
 ```bash
-Copy code
 hacker@paths~position-thy-self:/$ cd /usr/include
 hacker@paths~position-thy-self:/usr/include$ /challenge/run
 Correct!!!
@@ -69,7 +67,6 @@ pwn.college{IybSF15qIcv-viUKFLLA7iICh1X.QX3QTN0wSMwEzNzEzW}
 The correct working directory is /var/log. Navigating to the correct location is necessary even when using an absolute path.
 
 ```bash
-Copy code
 hacker@paths~position-elsewhere:/var/log$ /challenge/run
 Correct!!!
 /challenge/run is an absolute path, invoked from the right directory!
@@ -83,7 +80,6 @@ pwn.college{wZGvKyaDQFnKsVqFsfMwPxm56-8.QX4QTN0wSMwEzNzEzW}
 This program requires /sys/kernel as the working directory.
 
 ```bash
-Copy code
 hacker@paths~position-yet-elsewhere:/sys/kernel$ /challenge/run
 Correct!!!
 /challenge/run is an absolute path, invoked from the right directory!
@@ -97,7 +93,6 @@ pwn.college{sfVVQoyFBEaujGlCWa9lg9DOJLp.QX5QTN0wSMwEzNzEzW}
 Relative paths do not start with /. When invoking challenge/run from /, the shell resolves it relative to the current directory.
 
 ```bash
-Copy code
 hacker@paths~implicit-relative-paths-from-:~$ challenge/run
 Correct!!!
 challenge/run is a relative path, invoked from the right directory!
@@ -111,7 +106,6 @@ pwn.college{YkED61aHtR8hZDhLA274BsvXfre.QXwUTN0wSMwEzNzEzW}
 Using ./ explicitly indicates the current directory when running the program.
 
 ```bash
-Copy code
 hacker@paths~explicit-relative-paths-from-:~$ ./challenge/run
 Correct!!!
 ./challenge/run is a relative path, invoked from the right directory!
@@ -125,7 +119,6 @@ pwn.college{0biTFhyRqU33WL81WtlaGGICuaO.QXxUTN0wSMwEzNzEzW}
 After cding into /challenge, we can run the program with ./run to invoke it relative to the current directory.
 
 ```bash
-Copy code
 hacker@paths~implicit-relative-path:/challenge$ ./run
 Correct!!!
 ./run is a relative path, invoked from the right directory!
@@ -139,7 +132,6 @@ pwn.college{UGcBbhZxiKzFr3t6naobo285_ph.QXzMDO0wSMwEzNzEzW}
 Programs can accept arguments that specify file paths. Here, ~/f indicates the file should be written to the hacker’s home directory.
 
 ```bash
-Copy code
 hacker@paths~home-sweet-home:~$ /challenge/run ~/f
 Writing the file to /home/hacker/f!
 ... and reading it back to you:
