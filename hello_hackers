@@ -1,8 +1,17 @@
 terminal prompts for the hello_hackers challenge
 
+Intro to commands: 
 hacker@hello~intro-to-commands:~$ whoami
 hacker
 hacker@hello~intro-to-commands:~$ hello
 Success! Here is your flag:
 pwn.college{kfOj1zhePUuNEF9ggGo3Gvhip2j.QX3YjM1wSMwEzNzEzW}
 
+Intro to arguments:
+hacker@hello~intro-to-arguments:~$ hello hackers
+Success! Here is your flag:
+pwn.college{wyQXvy3y6vjEZVpPKleRdzp67r3.QX4YjM1wSMwEzNzEzW}
+hacker@hello~intro-to-arguments:~$ 
+
+Command history:
+hacker@hello~command-history:~$ the flag is pwn.college{4DIY5zFtCaDnqbbNirapogK6Ws_.0lNzEzNxwSMwEzNzEzW}
