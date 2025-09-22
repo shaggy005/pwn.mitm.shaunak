@@ -1,4 +1,4 @@
-Pondering Paths
+Pondering Paths Challenge - Writeup
 
 The challenge asks you to navigate the Linux filesystem in the pwn.college DOJO and invoke programs using both absolute and relative paths from various directories. Each level tests your understanding of paths and how the shell resolves them.
 
