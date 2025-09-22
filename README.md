@@ -1,16 +1,16 @@
-# 🐧 pwn.mitm-shaunak  
+# pwn.mitm-shaunak  
 
 Hi! I'm **Shaunak** 👋  
 I fuck around and find out.  
-I also produce music 🎶 — so if you want a beat, wanna write songs together, or get your tracks mixed, I’m your man.  
+I also produce music so if you want a beat, wanna write songs together, or get your tracks mixed, I’m your man.  
 
 ---
 
 ## ⚡ Progress Till Now  
 
-**Current Dojo:** *Linux Luminarium* 🐧  
+**Current Dojo:** *Linux Luminarium* 
 
-### 📚 Challenges
+### Challenges
 - [x] Hello Hackers  
 - [x] Pondering Paths  
 - [ ] Comprehending Commands  
