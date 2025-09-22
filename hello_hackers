@@ -1,0 +1,8 @@
+terminal prompts for the hello_hackers challenge
+
+hacker@hello~intro-to-commands:~$ whoami
+hacker
+hacker@hello~intro-to-commands:~$ hello
+Success! Here is your flag:
+pwn.college{kfOj1zhePUuNEF9ggGo3Gvhip2j.QX3YjM1wSMwEzNzEzW}
+
