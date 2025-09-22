@@ -88,3 +88,20 @@ pwn.college{YkED61aHtR8hZDhLA274BsvXfre.QXwUTN0wSMwEzNzEzW}
 hacker@paths~explicit-relative-paths-from-:/$ 
 
 8. Implicit Relative Path
+hacker@paths~implicit-relative-path:~$ cd /
+hacker@paths~implicit-relative-path:/$ cd challenge
+hacker@paths~implicit-relative-path:/challenge$ ./run
+Correct!!!
+./run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{0biTFhyRqU33WL81WtlaGGICuaO.QXxUTN0wSMwEzNzEzW}
+hacker@paths~implicit-relative-path:/challenge$ 
+
+9. Home Sweet Home
+hacker@paths~home-sweet-home:~$ /challenge/run ~/f
+Writing the file to /home/hacker/f!
+... and reading it back to you:
+pwn.college{UGcBbhZxiKzFr3t6naobo285_ph.QXzMDO0wSMwEzNzEzW}
+hacker@paths~home-sweet-home:~$ cat ~/f
+pwn.college{UGcBbhZxiKzFr3t6naobo285_ph.QXzMDO0wSMwEzNzEzW}
+hacker@paths~home-sweet-home:~$ 
