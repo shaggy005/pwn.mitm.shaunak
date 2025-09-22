@@ -15,7 +15,7 @@ Each level tests your understanding of paths and how the shell resolves them.
 - [7. Explicit Relative Paths, From /](#7-explicit-relative-paths-from-)
 - [8. Implicit Relative Path, From /challenge](#8-implicit-relative-path-from-challenge)
 - [9. Home Sweet Home](#9-home-sweet-home)
-- [📌 What I Learned](#-what-i-learned)
+- [What I Learned](#-what-i-learned)
 - [References](#references)
 
 ---
@@ -139,7 +139,7 @@ pwn.college{UGcBbhZxiKzFr3t6naobo285_ph.QXzMDO0wSMwEzNzEzW}
 hacker@paths~home-sweet-home:~$ cat ~/f
 pwn.college{UGcBbhZxiKzFr3t6naobo285_ph.QXzMDO0wSMwEzNzEzW}
 ```
-📌 What I Learned
+## What I Learned
 Difference between absolute vs relative paths
 
 Importance of the current working directory when running programs
@@ -150,5 +150,5 @@ The significance of ./ for relative paths
 
 Passing file path arguments to programs for reading/writing
 
-References
+## References
 None
