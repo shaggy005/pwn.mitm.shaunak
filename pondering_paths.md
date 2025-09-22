@@ -34,7 +34,7 @@ BOOM!!!
 Here is your flag:
 pwn.college{AA2pAsID85BLWutqCKuxEAyw9Rb.QX4cTO0wSMwEzNzEzW}
 ```
-2. Program and Absolute Paths
+## 2. Program and Absolute Paths
 Flag:
 pwn.college{UXIk7d2JnwElTFSN4Chd9GjTANC.QX1QTN0wSMwEzNzEzW}
 
@@ -46,7 +46,7 @@ Correct!!!
 /challenge/run is an absolute path! Here is your flag:
 pwn.college{UXIk7d2JnwElTFSN4Chd9GjTANC.QX1QTN0wSMwEzNzEzW}
 ```
-3. Position Thy Self
+## 3. Position Thy Self
 Flag:
 pwn.college{A7-WmhT03MDybBQUn243Mb5ZMds.QX2QTN0wSMwEzNzEzW}
 
@@ -60,7 +60,7 @@ Correct!!!
 Here is your flag:
 pwn.college{A7-WmhT03MDybBQUn243Mb5ZMds.QX2QTN0wSMwEzNzEzW}
 ```
-4. Position Elsewhere
+## 4. Position Elsewhere
 Flag:
 pwn.college{IybSF15qIcv-viUKFLLA7iICh1X.QX3QTN0wSMwEzNzEzW}
 
@@ -73,7 +73,7 @@ Correct!!!
 Here is your flag:
 pwn.college{IybSF15qIcv-viUKFLLA7iICh1X.QX3QTN0wSMwEzNzEzW}
 ```
-5. Position Yet Elsewhere
+## 5. Position Yet Elsewhere
 Flag:
 pwn.college{wZGvKyaDQFnKsVqFsfMwPxm56-8.QX4QTN0wSMwEzNzEzW}
 
@@ -86,7 +86,7 @@ Correct!!!
 Here is your flag:
 pwn.college{wZGvKyaDQFnKsVqFsfMwPxm56-8.QX4QTN0wSMwEzNzEzW}
 ```
-6. Implicit Relative Paths, From /
+## 6. Implicit Relative Paths, From /
 Flag:
 pwn.college{sfVVQoyFBEaujGlCWa9lg9DOJLp.QX5QTN0wSMwEzNzEzW}
 
@@ -99,7 +99,7 @@ challenge/run is a relative path, invoked from the right directory!
 Here is your flag:
 pwn.college{sfVVQoyFBEaujGlCWa9lg9DOJLp.QX5QTN0wSMwEzNzEzW}
 ```
-7. Explicit Relative Paths, From /
+## 7. Explicit Relative Paths, From /
 Flag:
 pwn.college{YkED61aHtR8hZDhLA274BsvXfre.QXwUTN0wSMwEzNzEzW}
 
@@ -112,7 +112,7 @@ Correct!!!
 Here is your flag:
 pwn.college{YkED61aHtR8hZDhLA274BsvXfre.QXwUTN0wSMwEzNzEzW}
 ```
-8. Implicit Relative Path, From /challenge
+## 8. Implicit Relative Path, From /challenge
 Flag:
 pwn.college{0biTFhyRqU33WL81WtlaGGICuaO.QXxUTN0wSMwEzNzEzW}
 
@@ -125,7 +125,7 @@ Correct!!!
 Here is your flag:
 pwn.college{0biTFhyRqU33WL81WtlaGGICuaO.QXxUTN0wSMwEzNzEzW}
 ```
-9. Home Sweet Home
+## 9. Home Sweet Home
 Flag:
 pwn.college{UGcBbhZxiKzFr3t6naobo285_ph.QXzMDO0wSMwEzNzEzW}
 
