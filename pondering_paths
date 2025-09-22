@@ -1,1 +1,90 @@
-Pondering Paths
+Pondering Paths Challenge - Writeup
+
+1. The root
+hacker@paths~the-root:~$ cd /.
+hacker@paths~the-root:/$ ls
+bin   challenge  etc   home  lib32  libx32  mnt  opt   pwn   run   srv  tmp  var
+boot  dev        flag  lib   lib64  media   nix  proc  root  sbin  sys  usr
+hacker@paths~the-root:/$ /pwn
+BOOM!!!
+Here is your flag:
+pwn.college{AA2pAsID85BLWutqCKuxEAyw9Rb.QX4cTO0wSMwEzNzEzW}
+hacker@paths~the-root:/$ 
+
+2. Program and absolute paths
+hacker@paths~program-and-absolute-paths:~$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path! Here is your flag:
+pwn.college{UXIk7d2JnwElTFSN4Chd9GjTANC.QX1QTN0wSMwEzNzEzW}
+hacker@paths~program-and-absolute-paths:~$ 
+
+3. Position Thy Self
+hacker@paths~position-thy-self:/$ cd /.
+hacker@paths~position-thy-self:/$ ls
+bin   challenge  etc   home  lib32  libx32  mnt  opt   root  sbin  sys  usr
+boot  dev        flag  lib   lib64  media   nix  proc  run   srv   tmp  var
+hacker@paths~position-thy-self:/$ cd challenge
+hacker@paths~position-thy-self:/challenge$ /challenge/run
+Incorrect...
+You are not currently in the /usr/include directory.
+Please use the `cd` utility to change directory appropriately.
+hacker@paths~position-thy-self:/challenge$ cd /.
+hacker@paths~position-thy-self:/$ cd /usr/include
+hacker@paths~position-thy-self:/usr/include$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path, invoked from the right directory!
+Here is your flag:
+pwn.college{A7-WmhT03MDybBQUn243Mb5ZMds.QX2QTN0wSMwEzNzEzW}
+hacker@paths~position-thy-self:/usr/include$ 
+
+4. Position Elsewhere
+hacker@paths~position-elsewhere:~$ cd /.
+hacker@paths~position-elsewhere:/$ cd challenge
+hacker@paths~position-elsewhere:/challenge$ /challenge/run
+Incorrect...
+You are not currently in the /var/log directory.
+Please use the `cd` utility to change directory appropriately.
+hacker@paths~position-elsewhere:/challenge$ cd /.
+hacker@paths~position-elsewhere:/$ cd /var/log
+hacker@paths~position-elsewhere:/var/log$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path, invoked from the right directory!
+Here is your flag:
+pwn.college{IybSF15qIcv-viUKFLLA7iICh1X.QX3QTN0wSMwEzNzEzW}
+hacker@paths~position-elsewhere:/var/log$ 
+
+5. Position Yet Elsewhere
+hacker@paths~position-yet-elsewhere:~$ cd /.
+hacker@paths~position-yet-elsewhere:/$ cd challenge
+hacker@paths~position-yet-elsewhere:/challenge$ /challenge/run
+Incorrect...
+You are not currently in the /sys/kernel directory.
+Please use the `cd` utility to change directory appropriately.
+hacker@paths~position-yet-elsewhere:/challenge$ cd /.
+hacker@paths~position-yet-elsewhere:/$ cd /sys/kernel
+hacker@paths~position-yet-elsewhere:/sys/kernel$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path, invoked from the right directory!
+Here is your flag:
+pwn.college{wZGvKyaDQFnKsVqFsfMwPxm56-8.QX4QTN0wSMwEzNzEzW}
+hacker@paths~position-yet-elsewhere:/sys/kernel$ 
+
+6. Implicit Relatiive Paths ,From
+hacker@paths~implicit-relative-paths-from-:~$ cd /.
+hacker@paths~implicit-relative-paths-from-:/$ challenge/run
+Correct!!!
+challenge/run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{sfVVQoyFBEaujGlCWa9lg9DOJLp.QX5QTN0wSMwEzNzEzW}
+hacker@paths~implicit-relative-paths-from-:/$ 
+
+7. Explicit Realtive Paths ,From
+hacker@paths~explicit-relative-paths-from-:~$ cd /
+hacker@paths~explicit-relative-paths-from-:/$ ./challenge/run
+Correct!!!
+./challenge/run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{YkED61aHtR8hZDhLA274BsvXfre.QXwUTN0wSMwEzNzEzW}
+hacker@paths~explicit-relative-paths-from-:/$ 
+
+8. Implicit Relative Path
