@@ -6,7 +6,7 @@ I also produce music so if you want a beat, wanna write songs together, or get y
 
 ---
 
-## ⚡ Progress Till Now  
+## Progress Till Now  
 
 **Linux Luminarium**
 
