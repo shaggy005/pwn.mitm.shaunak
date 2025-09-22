@@ -1,17 +1,45 @@
-terminal prompts for the hello_hackers challenge
+Hello Hackers Challenge – Writeup
 
-Intro to commands: 
+The Hello Hackers challenge introduces some basic Linux command-line concepts. Below are the tasks, commands, and corresponding flags.
+
+1. Intro to Commands
+This part demonstrates how to run a simple command.
+
 hacker@hello~intro-to-commands:~$ whoami
 hacker
+
+- The `whoami` command prints the current user. Here, the user is `hacker`.
+
 hacker@hello~intro-to-commands:~$ hello
 Success! Here is your flag:
 pwn.college{kfOj1zhePUuNEF9ggGo3Gvhip2j.QX3YjM1wSMwEzNzEzW}
 
-Intro to arguments:
+- Running the `hello` command reveals the flag.
+
+Flag: pwn.college{kfOj1zhePUuNEF9ggGo3Gvhip2j.QX3YjM1wSMwEzNzEzW}
+
+2. Intro to Arguments
+This part teaches that commands can take arguments.
+
 hacker@hello~intro-to-arguments:~$ hello hackers
 Success! Here is your flag:
 pwn.college{wyQXvy3y6vjEZVpPKleRdzp67r3.QX4YjM1wSMwEzNzEzW}
-hacker@hello~intro-to-arguments:~$ 
 
-Command history:
+- Here, the command is `hello`, and the argument is `hackers`.
+- Supplying the argument correctly produces a new flag.
+
+Flag: pwn.college{wyQXvy3y6vjEZVpPKleRdzp67r3.QX4YjM1wSMwEzNzEzW}
+
+3. Command History
+This part highlights the usefulness of checking your command history.
+
 hacker@hello~command-history:~$ the flag is pwn.college{4DIY5zFtCaDnqbbNirapogK6Ws_.0lNzEzNxwSMwEzNzEzW}
+
+- The flag is directly revealed in the history.
+
+Flag: pwn.college{4DIY5zFtCaDnqbbNirapogK6Ws_.0lNzEzNxwSMwEzNzEzW}
+
+Summary
+- Learned how to execute basic commands (`whoami`, `hello`).
+- Understood how to pass arguments to commands.
+- Explored command history to retrieve hidden information.
