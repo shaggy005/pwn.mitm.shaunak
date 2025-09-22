@@ -8,7 +8,7 @@ I also produce music so if you want a beat, wanna write songs together, or get y
 
 ## ⚡ Progress Till Now  
 
-**Current Dojo:** *Linux Luminarium* 
+**Linux Luminarium**
 
 ### Challenges
 - [x] Hello Hackers  
