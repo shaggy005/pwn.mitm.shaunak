@@ -1,0 +1,53 @@
+1. cat: not the pet, but the command!
+
+hacker@commands~cat-not-the-pet-but-the-command:~$ cat flag
+pwn.college{QGBz379w8crgZx3NZlOjQJ3aihS.QXxcTN0wSMwEzNzEzW}
+hacker@commands~cat-not-the-pet-but-the-command:~$ 
+
+2. catting absolute paths
+hacker@commands~catting-absolute-paths:~$ cat /flag
+pwn.college{Uj3pkpAM-hk_pM5wdeGibA5Otp2.QX5ETO0wSMwEzNzEzW}
+hacker@commands~catting-absolute-paths:~$ 
+3. more catting practice
+You cannot use the 'cd' command in this level, and must retrieve the flag by 
+absolute path. Plus, I hid the flag in a different directory! You can find it 
+in the file /usr/lib/systemd/flag. Go cat it out **without** cding into that 
+directory!
+hacker@commands~more-catting-practice:~$ cat /usr/lib/systemd/flag
+pwn.college{E8RpnsS7SWETm6xmWG1Wm2K6XoO.QXwITO0wSMwEzNzEzW}
+hacker@commands~more-catting-practice:~$ 
+4. grepping for a needle in a haystack
+Connected!
+hacker@commands~grepping-for-a-needle-in-a-haystack:~$ grep 'pwn\.college' /challenge/data.txt
+pwn.college{o8zdKXC1KIwB5AsBZMH0bQZ1xCv.QX3EDO0wSMwEzNzEzW}
+hacker@commands~grepping-for-a-needle-in-a-haystack:~$ 
+5. comparing files
+hacker@commands~comparing-files:~$ diff /challenge/decoys_only.txt /challenge/decoys_and_real.txt
+11a12
+> pwn.college{cXUc7sd_FzbagWT9AcUWlV19bF2.01MwMDOxwSMwEzNzEzW}
+hacker@commands~comparing-files:~$ 
+
+6. Listing files
+hacker@commands~listing-files:~$ ls /challenge
+16634-renamed-run-26078  DESCRIPTION.md
+hacker@commands~listing-files:~$ cat /challenge/16634-renamed-run-26078
+#!/opt/pwn.college/bash
+echo "Yahaha, you found me! Here is your flag:"
+cat /flag
+hacker@commands~listing-files:~$ /challenge/16634-renamed-run-26078
+Yahaha, you found me! Here is your flag:
+pwn.college{MAXNJsZZSZY07JGMpWJ4xMCNcS7.QX4IDO0wSMwEzNzEzW}
+hacker@commands~listing-files:~$ 
+
+7. touching files
+hacker@commands~touching-files:~$ touch /tmp/pwn /tmp/college
+hacker@commands~touching-files:~$ /challenge/run
+Success! Here is your flag:
+pwn.college{gpa11VS4HeAllngyl1oya5wkybx.QXwMDO0wSMwEzNzEzW}
+hacker@commands~touching-files:~$ 
+
+8. removing files
+
+
+
+
