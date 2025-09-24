@@ -21,7 +21,6 @@ hacker@commands~cat-not-the-pet-but-the-command:~$
 - `cat` reads the contents of files.
 - Useful for quickly viewing files from the terminal.
 
----
 
 ## 2. Catting Absolute Paths
 
@@ -39,7 +38,6 @@ hacker@commands~catting-absolute-paths:~$
 - Absolute paths start from `/` and can be accessed from anywhere.
 - Critical when `cd` is not allowed.
 
----
 
 ## 3. More Catting Practice
 
@@ -57,7 +55,6 @@ hacker@commands~more-catting-practice:~$
 - `cat` works on any file if you know the full path.
 - Hidden system directories may contain flags.
 
----
 
 ## 4. Grepping for a Needle in a Haystack
 
@@ -77,7 +74,6 @@ hacker@commands~grepping-for-a-needle-in-a-haystack:~$
 - `grep` searches for matching patterns in files.
 - Escape special characters like `.` in the pattern.
 
----
 
 ## 5. Comparing Files
 
@@ -96,7 +92,6 @@ hacker@commands~comparing-files:~$
 - `diff` highlights differences line by line.
 - Useful for spotting hidden flags in slightly different files.
 
----
 
 ## 6. Listing Files
 
@@ -121,7 +116,6 @@ hacker@commands~listing-files:~$
 - `ls` lists directory contents.
 - Running scripts can reveal hidden flags.
 
----
 
 ## 7. Touching Files
 
@@ -141,7 +135,6 @@ hacker@commands~touching-files:~$
 - `touch` creates empty files.
 - Some scripts require files to exist to trigger flags.
 
----
 
 ## 8. Removing Files
 
@@ -161,7 +154,6 @@ hacker@commands~removing-files:~$
 - `rm` deletes files permanently.
 - Removing specific files can be part of a challenge.
 
----
 
 ## 9. Moving Files
 
@@ -182,7 +174,6 @@ hacker@commands~moving-files:~$
 - `mv` moves or renames files.
 - Correct paths are crucial.
 
----
 
 ## 10. Hidden Files
 
@@ -206,7 +197,6 @@ hacker@commands~hidden-files:/$
 - Hidden files start with a `.`.
 - `ls -a` lists all files, including hidden ones.
 
----
 
 ## 11. An Epic Filesystem Quest
 
@@ -295,7 +285,6 @@ It is: pwn.college{0nQdbY-MrzzNoncQwyRNTX5s6Tl.QX5IDO0wSMwEzNzEzW}
 - Hidden files often start with a `.` and require `ls -a` to reveal.  
 - Combining `ls` and `cat` carefully can help navigate complex filesystem challenges.
 
----
 ## 12. Making Directories
 
 **Steps:**  
@@ -316,7 +305,6 @@ hacker@commands~making-directories:/tmp/pwn$
 - `mkdir` creates new directories.  
 - Files inside directories can trigger scripts or challenges.
 
----
 
 ## 13. Finding Files
 
