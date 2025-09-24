@@ -7,6 +7,18 @@ Correct argument! Here is your flag:
 pwn.college{skpCYz4FQNAe1vEEUEqTwERalpq.QX0ITO0wSMwEzNzEzW}
 hacker@man~learning-from-documentation:~$ 
 ```
+Explanation:
+
+The program /challenge/challenge has a documented argument --giveflag.
+
+By reading the documentation or instructions, we know this is the correct argument to retrieve the flag.
+
+Learning Outcome:
+
+Understanding how to read simple program documentation.
+
+Recognizing the role of command-line arguments in program execution.
+
 2. learning complex usage
 ```
 hacker@man~learning-complex-usage:~$ cd /.
@@ -18,15 +30,39 @@ Correct argument! Here is the /flag file:
 pwn.college{4YaoTXO1MWzfFCKf6tZ0U0ZvbIF.QX1ITO0wSMwEzNzEzW}
 hacker@man~learning-complex-usage:/$
 ```
-4. Reading Manuals
+Explanation:
+
+The --printfile argument requires a file path as its own argument.
+
+We first navigate (cd) and inspect directories (ls) to determine the correct path.
+
+Learning Outcome:
+
+Understanding commands with arguments that themselves require values.
+
+Navigating the filesystem to provide correct inputs.
+
+3. Reading Manuals
 ```
 hacker@man~reading-manuals:~$ man challenge
 hacker@man~reading-manuals:~$ /challenge/challenge --tmcgce 826
 Correct usage! Your flag: pwn.college{8tmcA2gDc6R-HeBnmkyxwpNLZ_Q.QX0EDO0wSMwEzNzEzW}
 hacker@man~reading-manuals:~$
 ```
+Explanation:
 
-6. Searching Manuals
+The man command opens the manual page for challenge.
+
+The manual documented the --tmcgce argument, which must be called with value 826.
+
+Learning Outcome:
+
+Using man pages to discover program arguments.
+
+Understanding the structure of manual pages (NAME, SYNOPSIS, DESCRIPTION, OPTIONS).
+
+
+4. Searching Manuals
 ```
 hacker@man~searching-manuals:~$ man challenge
 hacker@man~searching-manuals:~$ /challenge/challenge --tov
@@ -34,8 +70,20 @@ Initializing...
 Correct usage! Your flag: pwn.college{MOFLzwgWly-LyGUe4LJeTyWMFvy.QX1EDO0wSMwEzNzEzW}
 hacker@man~searching-manuals:~$
 ```
+Explanation:
 
-7. Searching for Manuals
+Sometimes the manual contains many arguments; searching helps find the relevant one.
+
+--tov is one such documented option that prints the flag.
+
+Learning Outcome:
+
+Using man pages to find specific options.
+
+Learning that careful reading or searching can reveal hidden functionality.
+
+
+5. Searching for Manuals
 ```
 hacker@man~searching-for-manuals:~$ man man
 hacker@man~searching-for-manuals:~$ man -k challenge
@@ -45,8 +93,22 @@ hacker@man~searching-for-manuals:~$ /challenge/challenge --bjkgar 014
 Correct usage! Your flag: pwn.college{0b1j_SkC43Tg6IarJuwB93zjgjt.QX2EDO0wSMwEzNzEzW}
 hacker@man~searching-for-manuals:~$
 ```
+Explanation:
 
-9. Helpful Programs
+The man page is randomized; its name is not challenge.
+
+man -k challenge searches the man database to locate it.
+
+Once opened, the documentation shows the correct argument.
+
+Learning Outcome:
+
+Using man -k to find hidden or randomized man pages.
+
+Recognizing that not all documentation uses predictable filenames.
+
+
+6. Helpful Programs
 ```
 hacker@man~helpful-programs:~$ /challenge/challenge --help
 usage: a challenge to make you ask for help [-h] [--fortune] [-v]
@@ -66,7 +128,19 @@ hacker@man~helpful-programs:~$ /challenge/challenge -g 892
 Correct usage! Your flag: pwn.college{8wnLBPVGq9-2XGT28AutbW3Xw7t.QX3IDO0wSMwEzNzEzW}
 hacker@man~helpful-programs:~$ 
 ```
-9. Help For Builtins
+Explanation:
+
+--help prints program usage, listing all valid arguments.
+
+--print-value reveals the correct argument to use with -g or --give-the-flag.
+
+Learning Outcome:
+
+Reading --help output to discover arguments and usage.
+
+Understanding how programs may provide dynamic “secret” values
+
+7. Help For Builtins
 
 ```
 hacker@man~help-for-builtins:~$ help
@@ -132,3 +206,19 @@ hacker@man~help-for-builtins:~$ challenge --secret Ij1UmsPu
 Correct! Here is your flag!
 pwn.college{Ij1UmsPuC5ET1hcw63EgJAqhUD1.QX0ETO0wSMwEzNzEzW}
 ```
+
+Explanation:
+
+challenge is a shell builtin, not an external program.
+
+The help builtin shows its arguments and secret value.
+
+--secret VALUE prints the flag when given the correct value.
+
+Learning Outcome:
+
+Builtins are handled internally by the shell.
+
+help <builtin> is equivalent to man <command> for external programs.
+
+Reading builtin documentation reveals all required arguments.
