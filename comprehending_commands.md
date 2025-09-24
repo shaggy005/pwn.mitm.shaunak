@@ -1,7 +1,7 @@
 
 # Comprehending Commands
 
-This writeup documents my solutions for various Linux command exercises in pwn.college. For each task, I provide **Steps**, the **terminal snapshot**, and a **What I Learned** section.
+This writeup documents my solutions for various Linux command exercises in pwn.college.
 
 ---
 
