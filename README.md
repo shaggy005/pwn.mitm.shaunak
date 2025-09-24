@@ -13,7 +13,7 @@ I also produce music so if you want a beat, wanna write songs together, or get y
 ### Challenges
 - [x] Hello Hackers  
 - [x] Pondering Paths  
-- [ ] Comprehending Commands  
+- [x] Comprehending Commands  
 - [ ] Digesting Documentation  
 - [ ] File Globbing  
 - [ ] Practicing Piping  
