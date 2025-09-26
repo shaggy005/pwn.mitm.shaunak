@@ -362,6 +362,18 @@ find: ‘/proc/7/ns’: Permission denied
 hacker@commands~finding-files:~$ cat /usr/share/vim/vim81/pack/dist/opt/termdebug/flag
 pwn.college{Mw8i6qUXebBUHV2cL6uDx2LQxpp.QXyMDO0wSMwEzNzEzW}
 ```
+## 14. linking files
+```
+hacker@commands~linking-files:~$ ln -s /flag /home/hacker/not-the-flag
+hacker@commands~linking-files:~$ ls -l /home/hacker/not-the-flag
+file /home/hacker/not-the-flag
+lrwxrwxrwx 1 hacker hacker 5 Sep 26 20:49 /home/hacker/not-the-flag -> /flag
+/home/hacker/not-the-flag: symbolic link to /flag
+hacker@commands~linking-files:~$ /challenge/catflag
+About to read out the /home/hacker/not-the-flag file!
+pwn.college{ohaUoQKLVzr9XNy0xl2PBs0gYrA.QX5ETN1wSMwEzNzEzW}
+hacker@commands~linking-files:~$ 
+```
 
 **What I Learned:**  
 - `find / -name <filename>` recursively searches the filesystem.  
