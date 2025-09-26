@@ -14,8 +14,8 @@ I also produce music so if you want a beat, wanna write songs together, or get y
 - [x] Hello Hackers  
 - [x] Pondering Paths  
 - [x] Comprehending Commands  
-- [ ] Digesting Documentation  
-- [ ] File Globbing  
+- [x] Digesting Documentation  
+- [x] File Globbing  
 - [ ] Practicing Piping  
 - [ ] Shell Variables  
 - [ ] Data Manipulation  
