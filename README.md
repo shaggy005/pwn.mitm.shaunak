@@ -16,8 +16,8 @@ I also produce music so if you want a beat, wanna write songs together, or get y
 - [x] Comprehending Commands  
 - [x] Digesting Documentation  
 - [x] File Globbing  
-- [ ] Practicing Piping  
-- [ ] Shell Variables  
+- [x] Practicing Piping  
+- [x] Shell Variables  
 - [ ] Data Manipulation  
 - [ ] Processes and Jobs  
 - [ ] Untangling Users  
