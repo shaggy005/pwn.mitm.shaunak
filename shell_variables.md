@@ -24,17 +24,11 @@ hacker@variables~setting-variables:~$
 
 ### Steps:
 
-You created a variable by assigning a value to it.
-
-Example: PWN=COLLEGE
-
-The challenge checked your variable and confirmed the correct setup, giving you the flag.
+I created a new variable by assigning a value to it with PWN=COLLEGE. The challenge checked the value of my variable and gave me the flag.
 
 ### What I Learned:
 
-Variables in bash are set with NAME=value (no spaces around =).
-
-Once set, you can use them like $NAME.
+I learned that in bash I can set variables using NAME=value with no spaces around the =. After that, I can access them with $NAME.
 
 ## 3. Multi word variables
 ```
@@ -46,21 +40,11 @@ hacker@variables~multi-word-variables:~$
 
 ### Steps:
 
-The challenge asked for a variable with multiple words.
-
-You set it like this:
-
-PWN="COLLEGE YEAH"
-
-The quotes ensured the shell treated "COLLEGE YEAH" as a single value, not two separate words.
-
-The challenge confirmed the variable and rewarded the flag.
+The challenge asked me to make a variable with multiple words. I did that by using quotes: PWN="COLLEGE YEAH". The quotes kept the words together as one value. The challenge confirmed it and gave me the flag.
 
 ### What I Learned:
 
-Use quotes when assigning multi-word strings to variables.
-
-Without quotes, the shell would split words by spaces and cause errors.
+I learned that if a variable value has spaces, I need to wrap it in quotes, otherwise the shell splits it up into separate words.
 
 ## 4. Exporting variables
 ```
@@ -84,25 +68,11 @@ hacker@variables~exporting-variables:~$
 
 ### Steps:
 
-You first set variables:
-
-PWN=COLLEGE
-
-COLLEGE=PWN
-
-Then you exported PWN using:
-
-export PWN
-
-Exporting made the variable visible to child processes (like /challenge/run).
-
-When you ran /challenge/run, it verified the setup and gave you the flag.
+First, I set two variables: PWN=COLLEGE and COLLEGE=PWN. Then I exported PWN by running export PWN. After that, I ran /challenge/run, which checked my environment variables. Since PWN was exported (and COLLEGE wasn’t), the program confirmed the setup and gave me the flag.
 
 ### What I Learned:
 
-export makes a variable part of the environment, so other programs/commands can see it.
-
-Variables set without export only exist inside the current shell session.
+I learned that export makes a variable part of the environment so that child processes (like /challenge/run) can access it. Variables that are not exported only stay in my current shell.
 
 ## 5. Printing exported variables
 ```
@@ -126,21 +96,13 @@ _=/run/dojo/bin/env
 hacker@variables~printing-exported-variables:~$ 
 ```
 
-Steps:
+### Steps:
 
-You ran:
+I used the command env to list all the environment variables. In the output, I found the FLAG variable, and its value was the flag.
 
-env
+### What I Learned:
 
-This printed all exported environment variables.
-
-Among them, you spotted the FLAG variable with its value (the flag).
-
-What I Learned:
-
-The env command lists all environment variables available to the current shell.
-
-This is how you can see what’s been exported and available globally.
+I learned that env prints all the exported environment variables available to my shell. This is a useful way to check which variables have been exported.
 
 ## 6. Storing command output
 ```
@@ -151,6 +113,14 @@ hacker@variables~storing-command-output:~$ echo $PWN
 pwn.college{gB5tsTIVGCM0F_j0Kr2Jh7xYjrp.QX1cDN1wSMwEzNzEzW}
 hacker@variables~storing-command-output:~$ 
 ```
+### Steps:
+
+I used command substitution to save the output of /challenge/run into a variable: PWN=$(/challenge/run). Then I ran echo $PWN to print its value, which was the flag.
+
+### What I Learned:
+
+I learned that I can capture the output of a command into a variable by using VAR=$(command). This is called command substitution, and it’s really useful when I want to store results for later use.
+
 ## 7. Reading input
 ```
 hacker@variables~reading-input:~$ echo PWN="COLLEGE"
@@ -161,6 +131,15 @@ You've set the PWN variable properly! As promised, here is the flag:
 pwn.college{cultdd7gCwxqv8t3R6c3wThKHiu.QX4cTN0wSMwEzNzEzW}
 hacker@variables~reading-input:~$ 
 ```
+
+### Steps:
+
+I used the read command to take input and store it in a variable. I typed read PWN, pressed enter, and then entered COLLEGE. The shell stored COLLEGE inside the variable PWN. The challenge verified it and gave me the flag.
+
+### What I Learned:
+
+I learned that the read command lets me store user input directly into a variable. This is especially useful when writing interactive shell scripts.
+
 ## 8. Reading files
 ```
 hacker@variables~reading-files:~$ read PWN </challenge/read_me
@@ -168,3 +147,10 @@ You've set the PWN variable properly! As promised, here is the flag:
 pwn.college{4mEFyxR-MzfN4v_I57FbGLl90aM.QXwIDO0wSMwEzNzEzW}
 hacker@variables~reading-files:~$ 
 ```
+### Steps:
+
+Instead of typing input manually, I redirected a file into read. I ran read PWN </challenge/read_me, and the shell stored the file’s content into the variable PWN. The challenge confirmed it and gave me the flag.
+
+### What I Learned:
+
+I learned that I can use input redirection (<) to feed a file’s contents into commands. Combined with read, it lets me load file data directly into a variable.
