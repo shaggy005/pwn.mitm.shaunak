@@ -18,10 +18,10 @@ I also produce music so if you want a beat, wanna write songs together, or get y
 - [x] File Globbing  
 - [x] Practicing Piping  
 - [x] Shell Variables  
-- [ ] Data Manipulation  
-- [ ] Processes and Jobs  
-- [ ] Untangling Users  
-- [ ] Perceiving Permissions  
-- [ ] Chaining Commands  
+- [x] Data Manipulation  
+- [x] Processes and Jobs  
+- [x] Untangling Users  
+- [x] Perceiving Permissions  
+- [x] Chaining Commands  
 - [ ] Terminal Multiplexing  
 - [ ] Pondering PATH  
