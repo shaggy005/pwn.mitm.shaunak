@@ -1,4 +1,4 @@
-![PHOTO-2025-10-10-23-04-05](https://github.com/user-attachments/assets/d973adad-7366-4c64-b92d-ecc9277c9477)# failed climb to the citadel
+# failed climb to the citadel
 
 ## Zahard's Welcome
 found the flag in the discord server
