@@ -18,6 +18,17 @@ Yahaha, you found me! Here is your flag:
 pwn.college{AGs6TZcEZjOhfEXf8tEJurrX0OD.QX4MDO0wSMwEzNzEzW}
 Now I will sleep for a while (so that you could find me with 'ps').
 ```
+### Steps
+
+I inspected the system to see which processes were running in the environment. I listed all processes with wide output to capture full command lines and then filtered the results to locate any process whose name related to the challenge. Once I found the target process, I invoked it directly to reveal the flag.
+
+### What I Learned
+
+I learned how to enumerate processes and interpret columns such as PID, PPID, user, start time, and the full command. I also practiced filtering process listings to quickly find a particular service or binary. This taught me how process discovery can be used to locate sleeping or backgrounded challenge programs.
+
+### References
+
+man ps
 ## 2. Killing processes
 ```
 hacker@processes~killing-processes:~$ ps -efww | grep dont_run
@@ -31,6 +42,19 @@ Great job! Here is your payment:
 pwn.college{4yxj2skHhC59tKt3A5BpNI8ebDu.QXyQDO0wSMwEzNzEzW}
 hacker@processes~killing-processes:~$ 
 ```
+### Steps
+
+I looked for the misbehaving process by scanning the process list for a recognizable name. After confirming its PID, I sent a termination signal to that PID to stop the process. I then rechecked the process list to ensure it was gone, and proceeded to run the challenge to receive the reward.
+
+### What I Learned
+
+I learned how to find and terminate processes by PID, and confirmed that killing a process frees up whatever resource or lock it held. I also learned to re-verify the process list after termination to ensure the action succeeded. This reinforced safe, targeted process termination practices.
+
+### References
+
+man kill
+
+man ps — process identification and verification
 ## 3. Interrupting processes
 ```
 hacker@processes~interrupting-processes:~$ /challenge/run
@@ -41,6 +65,16 @@ Good job! You have used Ctrl-C to interrupt this process! Here is your flag:
 pwn.college{MhSVCUpR1fkdUnqxyFAjP71-dUN.QXzQDO0wSMwEzNzEzW}
 hacker@processes~interrupting-processes:~$ 
 ```
+### Steps
+
+I ran the interactive challenge process and observed that it would not give the flag until the process exited. I used a keyboard interrupt to send the process an interrupt signal, which caused it to stop immediately and output the flag.
+
+### What I Learned
+
+I learned that a keyboard interrupt (SIGINT) forces an interactive program to stop and that many programs use this behavior intentionally as a puzzle mechanism. I also learned when it’s appropriate to use an interrupt instead of gracefully terminating a process.
+
+### References
+none
 ## 4. Misbehaving processes
 ```
 hacker@processes~killing-misbehaving-processes:~$ ps -efww | grep decoy
@@ -196,6 +230,19 @@ Sending the flag to /tmp/flag_fifo!
 pwn.college{oaDIy7RQyC8N6UXDIukmH-aHb6Q.0FNzMDOxwSMwEzNzEzW}
 hacker@processes~killing-misbehaving-processes:~$ 
 ```
+### Steps
+
+I inspected the process table and noticed a decoy process running under a different user context. I terminated the decoy process and any associated parent processes I could control. After that, I observed the program writing a flag into a named FIFO (a temporary file used as a pipe). I read from that FIFO (backgrounding the reader as needed) to capture the flag outputs being sent by the program.
+
+### What I Learned
+
+I learned how parent/child process relationships can affect control over services, and how some programs use IPC mechanisms (like FIFOs) to deliver outputs. I practiced terminating both direct child processes and supervising processes where possible, and I learned how to consume output asynchronously via backgrounded readers.
+
+### References
+
+Documentation on inter-process communication (FIFOs / named pipes)
+
+man ps, man kill for process hierarchy and termination
 ## 5. Suspending processes
 ```
 hacker@processes~suspending-processes:~$ /challenge/run
@@ -227,6 +274,17 @@ pwn.college{At0foM0y9BpUL6oizQqIOvBMwWP.QX1QDO0wSMwEzNzEzW}
 hacker@processes~suspending-processes:~$ 
 
 ```
+### Steps
+
+I started the challenge program and discovered it required a second running copy to produce the flag. I suspended the running instance (sending it to the stopped state), launched a new instance, and confirmed the challenge detected the suspended-first-copy as an existing instance and produced the flag.
+
+### What I Learned
+
+I learned how suspending a process puts it into a stopped state while preserving its PID and context. I also learned how some programs check for other instances by inspecting the process table, and that intentionally suspending a process can be used to meet those checks without terminating the original instance.
+
+### References
+
+idk, i just solved it from the question
 # 6. Resuming Processes
 ```
 hacker@processes~resuming-processes:~$ /challenge/run
@@ -243,6 +301,16 @@ Don't forget to press Enter to quit me!
 Goodbye!
 hacker@processes~resuming-processes:~$ 
 ```
+### Steps
+
+I followed the exercise by suspending the active challenge process and then bringing it back to the foreground. After resuming it, the program resumed execution from where it left off and produced the flag.
+
+### What I Learned
+
+I learned how resuming a stopped process restores it to running state in the foreground, preserving its standard input/output context. This highlighted the difference between stopped, backgrounded, and foreground states, and how resumption is used in interactive workflows.
+
+### References
+idk, i just solved it from the question
 ## 7. Backrounding processes
 ```
 hacker@processes~backgrounding-processes:~$ /challenge/run
@@ -286,6 +354,17 @@ Yay, I found another version of me running in the background! Here is the flag:
 pwn.college{YqzXJh468SujKmixCIq0GYiidnn.QX3QDO0wSMwEzNzEzW}
 hacker@processes~backgrounding-processes:~$ 
 ```
+### Steps
+
+I suspended a running instance and then resumed that suspended instance in the background. After ensuring a background copy was active and not suspended, I launched a new foreground instance which verified the background process’s presence and returned the flag.
+
+### What I Learned
+
+I learned how to move processes to the background while leaving them running, how to check their status, and why some programs consider a background running instance as "another copy" for their checks. I also practiced managing potential output overlap between background jobs and the interactive shell.
+
+### References
+
+man ps for STAT column meaning
 ## 8. Foregrounding Processes
 ```
 hacker@processes~foregrounding-processes:~$ /challenge/run
@@ -312,6 +391,17 @@ YES! Great job! I'm now running in the foreground. Hit Enter for your flag!
 pwn.college{Ia56O70_GJtVJrGuvtviYcUlnWq.QX4QDO0wSMwEzNzEzW}
 hacker@processes~foregrounding-processes:~$ 
 ```
+8. Foregrounding Processes
+### Steps
+
+I suspended a running program, resumed it in the background, and then brought it back to the foreground without re-suspending it. The challenge required exactly that sequence, and once I foregrounded the background job the program acknowledged it and produced the flag.
+
+### What I Learned
+
+I learned the precise workflow for suspending, backgrounding, and foregrounding processes so that a program can be moved through states without losing execution context. This exercise clarified subtle timing and state requirements of interactive job control.
+
+### References
+again, i just solved it from the question and the examples
 ## 9. Starting backround processes
 ```
 hacker@processes~starting-backgrounded-processes:~$ /challenge/run
@@ -331,6 +421,17 @@ pwn.college{APsaYl4_zwZVBdURybYZ3TZw-VU.QX5QDO0wSMwEzNzEzW}
 [1]+  Done                    /challenge/run
 hacker@processes~starting-backgrounded-processes:~$ 
 ```
+### Steps
+
+The challenge expected me to start the program directly in the background. I launched the program so it would run detached from the terminal prompt, verified that it was running in the background, and then observed it deliver the flag while my prompt remained usable.
+
+### What I Learned
+
+I learned how starting a program in the background allows the shell prompt to remain available immediately and how background processes can still produce output that interleaves with terminal input. I also learned to monitor job completion and retrieve outputs from backgrounded tasks.
+
+### References
+same
+
 ## 10. Process exit codes
 ```
 hacker@processes~process-exit-codes:~$ /challenge/get-code
@@ -360,3 +461,13 @@ CORRECT! Here is your flag:
 pwn.college{wJZTS-nznKV5c6pG1q8OZkzoGdY.QX5YDO1wSMwEzNzEzW}
 hacker@processes~process-exit-codes:~$ 
 ```
+### Steps
+
+I executed the program that exits with a nonzero status to get the exit code. I captured the exit code immediately using the special shell variable that holds the previous command’s exit status, and then supplied that exact numeric code back to the challenge to verify the result and receive the flag. I made sure not to run any other command in between, to avoid overwriting the captured exit code.
+
+### What I Learned
+
+I learned that every process returns an exit code (0 for success, nonzero for error) and that shells store the most recent exit status in a special variable. I also learned the importance of using that special variable immediately, because any intervening command will overwrite it. This taught me how to programmatically capture and forward exit codes reliably.
+
+### References
+Shell documentation on exit status and $? variable
