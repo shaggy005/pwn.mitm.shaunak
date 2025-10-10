@@ -23,5 +23,5 @@ I also produce music so if you want a beat, wanna write songs together, or get y
 - [x] Untangling Users  
 - [x] Perceiving Permissions  
 - [x] Chaining Commands  
-- [ ] Terminal Multiplexing  
-- [ ] Pondering PATH  
+- [x] Terminal Multiplexing  
+- [x] Pondering PATH  
