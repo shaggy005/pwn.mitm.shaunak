@@ -30,6 +30,18 @@ pwn.college{I1qX3AxFqlDfudNKWO3ccqSNlBa.QX1UDN1wSMwEzNzEzW}
 root@users~becoming-root-with-su:/home/hacker# 
 
 ```
+### Steps
+
+In this challenge, I switched to the root user using the su command and entered the password when prompted. Once I gained root access, I examined the files in the home directory and read the instructions provided. The instructions explained that both standard output and error output needed to be redirected to specific files for verification. After ensuring the outputs were redirected correctly, the challenge confirmed that all requirements were satisfied and revealed the flag.
+
+### What I Learned
+
+I learned how the su command allows a user to assume another user’s identity—most notably the root user—to gain administrative privileges. I also understood the importance of redirecting standard output (stdout) and standard error (stderr) streams to specific files, which is essential in many Linux scripting and debugging tasks.
+
+### References
+
+man su
+
 ## 2. Other users with su
 ```
 hacker@users~other-users-with-su:~$ su zardus
@@ -42,6 +54,17 @@ Congratulations, you have become Zardus! Here is your flag:
 pwn.college{U9bcDCOO3ITcyB8STWHNjEJLgCN.QX2UDN1wSMwEzNzEzW}
 zardus@users~other-users-with-su:/home/hacker$ 
 ```
+### Steps
+
+In this task, I was required to switch from my current user to another user named zardus. I used the su command followed by the username and entered the correct password. Once logged in as Zardus, I executed the challenge program, which confirmed my identity and displayed the flag.
+
+### What I Learned
+
+I learned how su can be used to switch between different user accounts within the same system. This concept helped me understand user privileges, authentication, and the separation of access rights between accounts. It also highlighted the importance of password protection and least-privilege principles in multi-user environments.
+
+### References
+
+man su
 ## 3. Cracking passwords
 ```
 hacker@users~cracking-passwords:~$ cat /challenge/shadow-leak
@@ -102,6 +125,17 @@ Congratulations, you have become Zardus! Here is your flag:
 pwn.college{UhLA3HslG7wM3PvyesBuGsCJ1Jv.QX3UDN1wSMwEzNzEzW}
 zardus@users~cracking-passwords:/home/hacker$ 
 ```
+### Steps
+
+This challenge involved a password hash leak in a file resembling the /etc/shadow format. I identified the entry belonging to the user zardus and extracted the hashed password using awk. I saved it in a separate file and then used the john (John the Ripper) tool to crack the hash. The cracked password was revealed as “aardvark.” After obtaining the password, I used su zardus to log in as Zardus and successfully executed the challenge to retrieve the flag.
+
+### What I Learned
+
+I learned how Linux stores user password hashes in the /etc/shadow file and how tools like John the Ripper can be used to crack those hashes through brute force or dictionary attacks. This helped me understand the importance of password hashing algorithms like SHA-512 and the necessity of strong password policies to prevent compromise. I also learned practical command-line techniques for parsing and isolating sensitive data.
+
+### References
+yadayadayada idk just solved it from the question
+
 ## 4. Using sudo
 ````
 hacker@users~using-sudo:~$ sudo -l
@@ -152,3 +186,14 @@ After this level, we will enable Privileged Mode!
 When you launch a challenge in Privileged Mode (by clicking the `Privileged` button instead of the `Start` button), the resulting container will give you full `sudo` access to allow you to introspect and debug to your heart's content, but of course with a placeholder flag.
 root@users~using-sudo:~# 
 ````
+### Steps
+
+In this challenge, I checked the commands I was allowed to run using sudo without entering a password. The output showed that I had unrestricted sudo privileges. I used sudo -i to open a root shell and verified my identity as root. From there, I accessed the flag directly by reading it from the given file paths, completing the task successfully.
+
+### What I Learned
+
+I learned how sudo works as a safer and more controlled alternative to su. Instead of switching users entirely, it allows the execution of specific commands with elevated privileges based on configured policies in the /etc/sudoers file. I also understood the difference between privilege escalation using su (password-based) and sudo (policy-based), and how modern Linux systems rely on sudo for system administration.
+
+### References
+
+man sudo and man sudoers
