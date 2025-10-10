@@ -44,15 +44,11 @@ hacker@path~adding-commands:~$
 ```
 ## 5. Hijacking Commands
 ```
-hacker@path~hijacking-commands:~$ mkdir -p ~/fakebin
-hacker@path~hijacking-commands:~$ cat > ~/fakebin/rm <<'EOF'
-	⁠echo "fake rm: skipping deletion" >&2
-	⁠exit 0
-	⁠EOF
-hacker@path~hijacking-commands:~$ chmod +x ~/fakebin/rm
-hacker@path~hijacking-commands:~$ PATH="$HOME/fakebin:$PATH" /challenge/run
+hacker@path~hijacking-commands:~$ echo "/run/dojo/bin/cat /flag" > rm
+hacker@path~hijacking-commands:~$ chmod +x rm
+hacker@path~hijacking-commands:~$ PATH=/home/hacker
+hacker@path~hijacking-commands:~$ /challenge/run
 Trying to remove /flag...
-Found 'rm' command at /home/hacker/fakebin/rm. Executing!
-fake rm: skipping deletion
-hacker@path~hijacking-commands:~$
+pwn.college{E8rtirteacp307LBLs5qr9woBps.QX3cjM1wSMwEzNzEzW}
+hacker@path~hijacking-commands:~$ 
 ```
